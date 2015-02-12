@@ -3,6 +3,7 @@
 #include "timer.h"
 #include "utils.h"
 #include <vector>
+#include <eigen3/Eigen/Dense>
 
 /* some constants definition */
 #define IMG_HEIGHT 240
@@ -18,6 +19,7 @@
 
 
 using namespace std;
+using MatrixXd;
 
 
 
