@@ -1,14 +1,10 @@
 #include"convolution.h"
 
-
-<<<<<<< HEAD
-=======
 // note the eigen stores its matrix in column-major !!!!!!
 // but it seems that we only need to change the convolution part -- and with in the convolution part, only the encode and decode part need to be changed
 
 /* todo list : a convolution function which takes in input images, kernels and the reference to the output image
  * a batch function which takes in the vector containing bunch of images and kernels and call the convolution kernel inside */
->>>>>>> 5c36f3204a8cacbf4e2e19b3fd95fc5bc8f83f36
 __global__
 void convolution(  double ** d_dataBuffer, 
                    double ** d_outputBuffer, 
@@ -24,12 +20,9 @@ void convolution(  double ** d_dataBuffer,
         size_t mykernelIdx = blockIdx.x % kernelSize;
         size_t myoutputIdx = blockIdx.x;
         
-<<<<<<< HEAD
-
-=======
         // load the corresponding kernel to the shared memory 
         // would like to load load the image to the shared memory as well but limited by the shared memory size
->>>>>>> 5c36f3204a8cacbf4e2e19b3fd95fc5bc8f83f36
+
         __shared__ double s_kernel[KERNEL_SIZE];
         if ( threadIdx.x < KERNEL_SIZE)
                 s_kernel[threadIdx.x] = d_kernels[mykernelIdx][threadIdx.x];
@@ -50,15 +43,15 @@ void convolution(  double ** d_dataBuffer,
         int myX = 0;
         int myY = 0;
 
-<<<<<<< HEAD
+
         // the relative coordinates for each pixel
         //int relativeX = 0;
         //int relativeY = 0;
 
 
-=======
+
         // by adding to the relative coordinate the offset, we get the absolute coordinate
->>>>>>> 5c36f3204a8cacbf4e2e19b3fd95fc5bc8f83f36
+
         // and note the top left pixel is considered as the origin.
         int offsetX = 0;
         int offsetY = 0;
@@ -96,10 +89,7 @@ void convolution(  double ** d_dataBuffer,
         }
 
 }
-<<<<<<< HEAD
-void batch(vector< vector < Matrix<Double, Dynamic, Dynamic, RowMajor> > > dataset, vector<  Matrix<Double, Dynamic, Dynamic, RowMajor> > kernels, vector < vector < Matrix<Double, Dynamic, Dynamic, RowMajor> > > output ){
 
-=======
 void batch(vector< vector <MatrixXd> > dataset, vector< MatrixXd > kernels, vector < vector < MatrixXd > > output ){
 
 
@@ -115,7 +105,6 @@ void batch(vector< vector <MatrixXd> > dataset, vector< MatrixXd > kernels, vect
          * So the mechanism we are using here is to first figure out which images are going to be transmitted in this kernel call, and then store the corresponding address in the h_dataBuffer array.  After convolution, the output will be written to the place specified by the h_outputStorage,
          * the good point of this arrangement is that we don't have to copy the data in CPU over and over 
          */
->>>>>>> 5c36f3204a8cacbf4e2e19b3fd95fc5bc8f83f36
         
 
 
