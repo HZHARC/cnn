@@ -66,7 +66,7 @@ void convolution(  double ** d_dataBuffer,
         }
 
 }
-void batch(vector< vector < Matrix<Double, Dynamic, Dynamic, RowMajor> > > dataset, vector<  Matrix<Double, Dynamic, Dynamic, RowMajor> > kernels, vector < vector < Matrix<Double, Dynamic, Dynamic, RowMajor> > > output ){
+void batch(vector< vector <MatrixXd> > dataset, vector<MatrixXd > kernels, vector < vector <MatrixXd> > output ){
 
         
 
