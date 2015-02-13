@@ -4,9 +4,12 @@
 #include "utils.h"
 #include <vector>
 #include <eigen3/Eigen/Dense>
+<<<<<<< HEAD
 #include <eigen3/Eigen/Core>
 
 
+=======
+>>>>>>> 5c36f3204a8cacbf4e2e19b3fd95fc5bc8f83f36
 
 /* some constants definition */
 #define IMG_HEIGHT 240
@@ -22,8 +25,13 @@
 
 
 using namespace std;
+<<<<<<< HEAD
 using Eigen::MatrixXd;
 using Eigen::Matrix;
+=======
+using MatrixXd;
+
+>>>>>>> 5c36f3204a8cacbf4e2e19b3fd95fc5bc8f83f36
 
 
 
